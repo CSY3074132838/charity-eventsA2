@@ -1,0 +1,108 @@
+<!-- public/search.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Charity Hub — Search Events</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    header.hero {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+    header.hero h1 {
+      font-size: 2rem;
+      margin-bottom: .5rem;
+      color: #1e40af;
+    }
+    header.hero p {
+      color: #475569;
+      font-size: 1rem;
+    }
+    form.search-form {
+      background: #fff;
+      padding: 1.5rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+    }
+    form.search-form label {
+      display: block;
+      margin-bottom: .3rem;
+      font-weight: 600;
+    }
+    form.search-form input, form.search-form select {
+      width: 100%;
+      padding: .6rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    form.search-form .form-actions {
+      display: flex;
+      gap: .8rem;
+      justify-content: flex-end;
+    }
+    #results {
+      margin-top: 1.5rem;
+    }
+    #results .card {
+      transition: transform .2s;
+    }
+    #results .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">💝 Charity Hub</a>
+      <ul class="nav-menu">
+        <li><a class="nav-link" href="./index.html">Home</a></li>
+        <li><a class="nav-link active" href="./search.html">Search Events</a></li>
+        <li id="user-info"></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Find Charity Events</h1>
+    <p>Search by date, city, or category to discover meaningful events near you</p>
+  </header>
+
+  <main class="container">
+    <form id="search-form" class="search-form">
+      <div>
+        <label for="date">Date</label>
+        <input type="date" name="date" id="date" />
+      </div>
+      <div>
+        <label for="location">Location (City)</label>
+        <input type="text" name="location" id="location" placeholder="e.g., Tokyo" />
+      </div>
+      <div>
+        <label for="category">Category</label>
+        <select name="category" id="category">
+          <option value="">Any</option>
+        </select>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn">🔍 Search</button>
+        <button type="button" id="clear-btn" class="btn btn-secondary">Clear</button>
+      </div>
+    </form>
+
+    <p id="search-error" class="error" hidden></p>
+    <div id="results" class="cards"></div>
+  </main>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/search.js"></script>
+</body>
+</html>

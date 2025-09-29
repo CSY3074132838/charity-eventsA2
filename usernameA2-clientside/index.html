@@ -1,0 +1,53 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Charity Hub — Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">💝 Charity Hub</a>
+      <ul class="nav-menu">
+        <li><a class="nav-link" href="./index.html">Home</a></li>
+        <li><a class="nav-link" href="./search.html">Search Events</a></li>
+     
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Welcome to Charity Hub</h1>
+      <p class="muted">Connecting you to meaningful events that fund real change.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Upcoming Events</h2>
+      <div id="events" class="cards"></div>
+      <p id="home-error" class="error" hidden></p>
+    </section>
+
+    <section id="about">
+      <h2>About the Organisation</h2>
+      <p>
+        We partner with local charities to make it easy for citizens to discover and join fundraising events.
+        Together, we can amplify impact.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: support@charityhub.example | Phone: +81-3-0000-0000</p>
+    </section>
+  </main>
+
+  <script src="./js/api.js"></script>
+  <script src="./js/home.js"></script>
+</body>
+</html>

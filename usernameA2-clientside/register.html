@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Charity Hub — Register</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main.container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .register-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+    .register-card h1 {
+      margin-bottom: 1rem;
+      color: #1e40af;
+    }
+    .auth-form input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    .auth-form input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+    }
+    .auth-form button {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .auth-form button:hover {
+      background: #1e3a8a;
+    }
+    .register-card p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #475569;
+    }
+    .register-card a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+    .register-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">💝 Charity Hub</a>
+      <ul class="nav-menu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./search.html">Search</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="register-card">
+      <h1>Create an Account</h1>
+      <form id="reg-form" class="auth-form">
+        <input type="text" name="username" placeholder="Username" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit" class="btn">Register</button>
+      </form>
+      <p>Already have an account? <a href="./login.html">Login here</a></p>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('reg-form').addEventListener('submit', e => {
+      e.preventDefault();
+      const user = e.target.username.value;
+      localStorage.setItem('user', user);
+      alert(`Account created for ${user}! (dummy register)`);
+      location.href = './index.html';
+    });
+  </script>
+</body>
+</html>

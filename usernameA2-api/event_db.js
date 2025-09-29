@@ -14,7 +14,7 @@ async function testConnection() {
   const conn = await pool.getConnection();
   await conn.ping();
   conn.release();
-  console.log('✅ DB connected');
+  console.log(' DB connected');
 }
 
 async function query(sql, params=[]) {
@@ -54,7 +54,6 @@ async function searchEvents({date, location, category}) {
     ORDER BY e.start_time ASC
   `, params);
 }
-
 async function getEventById(id) {
   const [ev] = await query(`
     SELECT e.*, c.name AS category_name, o.name AS org_name
